@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue.jsでゴルフ場検索</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="form_input">
+        <form action="">
+            <p>キーワード</p>
+            <input type="text" id="search_keyword">
+            <input type="button" value="検索" onclick="search_button()">
+        </form>
+    </div>
+    <span id="api_output"></span>
+    <span>件ヒット</span>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- <p>エリア</p> -->
+<!-- <select name="hoge" id="area">
+      <option hidden>選択してください</option>
+      <option v-for="(areas, key) in areas"
+      v-bind:key="key"
+      value="{{ key }}">
+      {{ area }}
+    </option>
+    
+  </select> -->
+<!-- <input type="submit" value="検索"> -->
