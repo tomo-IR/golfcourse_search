@@ -11,12 +11,15 @@
     <div id="form_input">
         <form action="">
             <p>キーワード</p>
-            <input type="text" id="search_keyword">
-            <input type="button" value="検索" onclick="search_button()">
+            <input type="text" id="search_keyword" @input="onInput">
+            <!-- <input type="button" value="検索" onclick="search_button()"> -->
         </form>
     </div>
     <span id="api_output"></span>
     <span>件ヒット</span>
+    <!-- <div id="app">
+        <input type="text" @input="onInput">
+    </div> -->
     <script src="main.js"></script>
 </body>
 
