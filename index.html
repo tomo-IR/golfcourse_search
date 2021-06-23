@@ -11,30 +11,25 @@
     <div id="form_input">
         <form action="">
             <p>キーワード</p>
-            <input type="text" id="search_keyword" @input="onInput">
+            <input type="text" id="search_keyword" @input="onInput_keyword">
+
             <!-- <input type="button" value="検索" onclick="search_button()"> -->
+
         </form>
     </div>
+    <select id="address">
+<option value="0">選択してください</option>
+<option value="101">北海道</option>
+<option value="102">関東</option>
+</select>
     <span id="api_output"></span>
     <span>件ヒット</span>
-    <!-- <div id="app">
-        <input type="text" @input="onInput">
-    </div> -->
+
+    <ul id="search_result">
+
+    </ul>
+
     <script src="main.js"></script>
 </body>
 
 </html>
-
-
-
-<!-- <p>エリア</p> -->
-<!-- <select name="hoge" id="area">
-      <option hidden>選択してください</option>
-      <option v-for="(areas, key) in areas"
-      v-bind:key="key"
-      value="{{ key }}">
-      {{ area }}
-    </option>
-    
-  </select> -->
-<!-- <input type="submit" value="検索"> -->
