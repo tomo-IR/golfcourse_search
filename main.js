@@ -20,15 +20,8 @@ var keyword = new Vue({
             var golfcourse_json = await res.json();
             global_golfcourse_json = golfcourse_json
 
-            if (global_golfcourse_json.error == "not_found") {
-                console.log("該当無し")
-                console.log("エラーの表示は" + global_golfcourse_json.error)
-                document.getElementById('api_output').innerHTML = 0;
-                list_delete();
-            } else {
-                console.log(" 該当あり")
-            }
-
+            hit_zero();
+            dispMessage("hogehoge")
             console.log("保持したいキーワードは" + global_keyword)
             console.log("初期化前のglobal_urlは" + global_url);
             console.log(keyword_url);
@@ -44,23 +37,14 @@ var keyword = new Vue({
 });
 
 async function inputChange(event) {
-
     global_areacode = event.currentTarget.value
     var function_areacode = "&areaCode=" + global_areacode
-    var areacode_url = global_url + global_keyword + function_areacode;
-
+    var areacode_url = global_url + "&keyword=" + global_keyword + function_areacode;
     var res = await fetch(areacode_url);
     var golfcourse_json = await res.json();
     global_golfcourse_json = golfcourse_json
 
-    if (global_golfcourse_json.error == "not_found") {
-        console.log("該当無し")
-        console.log("エラーの表示は" + global_golfcourse_json.error)
-        document.getElementById('api_output').innerHTML = 0;
-        list_delete();
-    } else {
-        console.log(" 該当あり")
-    }
+    hit_zero();
 
     console.log(global_areacode);
     console.log(global_url);
@@ -99,4 +83,19 @@ function get_list() {
         parentDiv.appendChild(newElement, parentDiv.firstChild);
     }
     // }
+}
+
+function hit_zero() {
+    if (global_golfcourse_json.error == "not_found") {
+        console.log("該当無し")
+        console.log("エラーの表示は" + global_golfcourse_json.error)
+        document.getElementById('api_output').innerHTML = 0;
+        list_delete();
+    } else {
+        console.log(" 該当あり")
+    }
+}
+
+function dispMessage(msg) {
+    console.log(msg);
 }
