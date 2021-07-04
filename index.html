@@ -12,19 +12,21 @@
         <form action="">
             <p>キーワード</p>
             <input type="text" id="search_keyword" @input="onInput_keyword">
-
-            <!-- <input type="button" value="検索" onclick="search_button()"> -->
-
         </form>
     </div>
     <p>エリア</p>
-    <select id="address">
-<option value="0">選択してください</option>
-<option value="101">北海道</option>
-<option value="102">関東</option>
-</select>
-    <p>
 
+    <select id="address">
+        <option value="0">選択してください</option>
+        <option v-for="option in options" v-bind:key="option.id" v-bind:value="option.id">
+            {{ option.name }}
+        </option>
+    </select>
+
+
+
+
+    <p>
         <span id="api_output"></span>
         <span>件ヒット</span>
     </p>
